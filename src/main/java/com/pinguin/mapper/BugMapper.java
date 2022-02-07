@@ -6,4 +6,6 @@ import com.pinguin.model.Bug;
 public interface BugMapper {
 
     Bug fromDto(BugDto bugDto);
+
+    BugDto toDto(Bug bug);
 }

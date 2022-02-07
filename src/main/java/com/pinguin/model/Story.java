@@ -1,7 +1,6 @@
 package com.pinguin.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Story {
@@ -11,7 +10,7 @@ public class Story {
     private Long issueId;
     private String title;
     private String description;
-    private Date createdAt;
+    private String createdAt;
 
     @ManyToOne
     @JoinColumn(name = "developer_id")
@@ -44,11 +43,11 @@ public class Story {
         this.description = description;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

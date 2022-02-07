@@ -2,7 +2,8 @@ package com.pinguin.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class BugDto {
+public class StoryDto {
+
     private String issueId;
     private String title;
     private String description;
@@ -10,23 +11,9 @@ public class BugDto {
     private String createdAt;
     private String developerId;
     private String status;
-    private String priority;
+    private int estimatedPoint;
 
-    public String getIssueId() {
-        return issueId;
-    }
 
-    public void setIssueId(String issueId) {
-        this.issueId = issueId;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public String getTitle() {
         return title;
@@ -60,11 +47,27 @@ public class BugDto {
         this.status = status;
     }
 
-    public String getPriority() {
-        return priority;
+    public int getEstimatedPoint() {
+        return estimatedPoint;
     }
 
-    public void setPriority(String priority) {
-        this.priority = priority;
+    public void setEstimatedPoint(int estimatedPoint) {
+        this.estimatedPoint = estimatedPoint;
+    }
+
+    public String getIssueId() {
+        return issueId;
+    }
+
+    public void setIssueId(String issueId) {
+        this.issueId = issueId;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

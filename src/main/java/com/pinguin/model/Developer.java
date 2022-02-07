@@ -14,10 +14,13 @@ public class Developer {
     @OneToMany(mappedBy = "developer")
     private Set<Story> stories;
 
-    @OneToMany(mappedBy = "developer")
-    private Set<Bug> bugs;
-
     public Developer() {
+    }
+
+    public Developer(Long id, String name, Set<Story> stories) {
+        this.id = id;
+        this.name = name;
+        this.stories = stories;
     }
 
     public Developer(String name) {
@@ -46,13 +49,5 @@ public class Developer {
 
     public void setStories(Set<Story> stories) {
         this.stories = stories;
-    }
-
-    public Set<Bug> getBugs() {
-        return bugs;
-    }
-
-    public void setBugs(Set<Bug> bugs) {
-        this.bugs = bugs;
     }
 }
