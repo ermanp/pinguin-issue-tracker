@@ -5,7 +5,7 @@ import com.pinguin.exception.DeveloperNotFoundException;
 import com.pinguin.mapper.impl.BugMapperImpl;
 import com.pinguin.model.Bug;
 import com.pinguin.model.Developer;
-import com.pinguin.repository.BugRepositoy;
+import com.pinguin.repository.BugRepository;
 import com.pinguin.repository.DeveloperRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ class BugServiceImplTest {
     @InjectMocks
     private BugServiceImpl bugService;
     @Mock
-    private BugRepositoy bugRepositoy;
+    private BugRepository bugRepositoy;
     @Mock
     private BugMapperImpl mapper;
     @Mock
@@ -35,22 +35,6 @@ class BugServiceImplTest {
 
     @BeforeEach
     void setUp() {
-    }
-
-    @Test
-    void saveAll() {
-    }
-
-    @Test
-    void deleteByIssueId() {
-    }
-
-    @Test
-    void findBugByIssueId() {
-    }
-
-    @Test
-    void findAll() {
     }
 
     @Test
@@ -81,7 +65,7 @@ class BugServiceImplTest {
         Mockito.when(developerRepository.findById(Long.valueOf(developerId))).thenReturn(Optional.of(dev1));
         Mockito.when(bugRepositoy.save(bug)).thenReturn(bug);
         Mockito.when(mapper.toDto(bug)).thenReturn(dto);
-        BugDto result = bugService.assigneDeveloper(issueId, developerId);
+        BugDto result = bugService.assignDeveloper(issueId, developerId);
         assertEquals(issueId,result.getIssueId());
         assertEquals(developerId,result.getDeveloperId());
 

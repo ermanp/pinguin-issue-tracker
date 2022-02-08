@@ -46,14 +46,6 @@ class DeveloperControllerTest {
     }
 
     @Test
-    void saveAll() {
-    }
-
-    @Test
-    void getAll() {
-    }
-
-    @Test
     void whenGetAllDevelopers_thenReturn200() throws Exception {
         DeveloperDto dto = new DeveloperDto();
         dto.setName("Nick");

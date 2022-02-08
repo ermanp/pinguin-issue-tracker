@@ -64,7 +64,7 @@ public class BugController {
     public ResponseEntity<BugDto> assign(@RequestParam("issue-id") String issueId,
                                         @RequestParam("developer-id") String developerId){
         try {
-            return ResponseEntity.ok(bugService.assigneDeveloper(issueId,developerId));
+            return ResponseEntity.ok(bugService.assignDeveloper(issueId,developerId));
         } catch (Exception e) {
             log.error(e.getMessage());
         }

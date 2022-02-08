@@ -5,7 +5,7 @@ import com.pinguin.exception.DeveloperNotFoundException;
 import com.pinguin.mapper.BugMapper;
 import com.pinguin.model.Bug;
 import com.pinguin.model.Developer;
-import com.pinguin.repository.BugRepositoy;
+import com.pinguin.repository.BugRepository;
 import com.pinguin.repository.DeveloperRepository;
 import com.pinguin.service.BugService;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ import java.util.stream.Collectors;
 @Transactional
 @Service
 public class BugServiceImpl implements BugService {
-    private final BugRepositoy bugRepositoy;
+    private final BugRepository bugRepositoy;
     private final DeveloperRepository developerRepository;
     private final BugMapper mapper;
 
-    public BugServiceImpl(BugRepositoy bugRepositoy, DeveloperRepository developerRepository, BugMapper mapper) {
+    public BugServiceImpl(BugRepository bugRepositoy, DeveloperRepository developerRepository, BugMapper mapper) {
         this.bugRepositoy = bugRepositoy;
         this.developerRepository = developerRepository;
         this.mapper = mapper;
@@ -49,7 +49,7 @@ public class BugServiceImpl implements BugService {
     }
 
     @Override
-    public BugDto assigneDeveloper(String issueId, String developerId) throws DeveloperNotFoundException {
+    public BugDto assignDeveloper(String issueId, String developerId) throws DeveloperNotFoundException {
         Bug bug = bugRepositoy.findBugByIssueId(Long.valueOf(issueId));
         Optional<Developer> developer = developerRepository.findById(Long.valueOf(developerId));
         if(!developer.isPresent()){

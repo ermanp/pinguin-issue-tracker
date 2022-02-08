@@ -23,23 +23,6 @@ public class Bug {
     public Bug() {
     }
 
-    public Bug(String title, String description, String createdAt, String status, String priority) {
-        this.title = title;
-        this.description = description;
-        this.createdAt = createdAt;
-        this.status = status;
-        this.priority = priority;
-    }
-
-    public Bug(String title, String description, String createdAt, Developer developer, String status, String priority) {
-        this.title = title;
-        this.description = description;
-        this.createdAt = createdAt;
-        this.developer = developer;
-        this.status = status;
-        this.priority = priority;
-    }
-
     public Long getIssueId() {
         return issueId;
     }

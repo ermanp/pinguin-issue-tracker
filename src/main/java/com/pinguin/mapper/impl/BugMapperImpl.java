@@ -21,7 +21,7 @@ public class BugMapperImpl implements BugMapper {
 
     /**
      * Method check developerId coming from Dto object
-     * If exist, retrieve from db and assign to bug
+     * If exists, retrieve from db and assign to bug
      * If not exist or not found, creates the bug without assigned developer.
     * */
     public Bug fromDto(BugDto bugDto){
@@ -52,7 +52,8 @@ public class BugMapperImpl implements BugMapper {
         bugDto.setIssueId(String.valueOf(bug.getIssueId()));
         bugDto.setDescription(bug.getDescription());
         bugDto.setCreatedAt(bug.getCreatedAt());
-        bugDto.setDeveloperId(String.valueOf(bug.getDeveloper().getId()));
+        if(bug.getDeveloper() != null)
+            bugDto.setDeveloperId(String.valueOf(bug.getDeveloper().getId()));
         bugDto.setPriority(bug.getPriority());
         bugDto.setStatus(bug.getStatus());
         bugDto.setTitle(bug.getTitle());

@@ -34,9 +34,7 @@ public class StoryMapperImpl implements StoryMapper {
 
         if(!storyDto.getDeveloperId().isEmpty()){
             Optional<Developer> developer = developerService.getDeveloperById(Long.valueOf(storyDto.getDeveloperId()));
-            if(developer.isPresent()){
-                story.setDeveloper(developer.get());
-            }
+            developer.ifPresent(story::setDeveloper);
         }
         return story;
 

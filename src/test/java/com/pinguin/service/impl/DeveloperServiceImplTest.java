@@ -35,17 +35,12 @@ class DeveloperServiceImplTest {
     }
 
     @Test
-    void saveAll() {
-
-    }
-
-    @Test
     void getAll() {
         Developer dev1 = new Developer(1l,"nick",new HashSet<>());
         Developer dev2 = new Developer(2l,"cave",new HashSet<>());
         Mockito.when(developerRepository.findAllBy()).thenReturn(Arrays.asList(dev1,dev2));
         List<DeveloperDto> developerDtos = developerService.getAll();
-        assertEquals(developerDtos.size(),2);
+        assertEquals(2,developerDtos.size());
     }
 
     @Test

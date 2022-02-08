@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface BugRepositoy extends CrudRepository<Bug, Long> {
+public interface BugRepository extends CrudRepository<Bug, Long> {
 
     void deleteBugByIssueId(Long issueId);
 

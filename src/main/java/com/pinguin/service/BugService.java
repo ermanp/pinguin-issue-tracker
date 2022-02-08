@@ -17,7 +17,7 @@ public interface BugService {
 
     List<BugDto> findAll();
 
-    BugDto assigneDeveloper(String issueId, String developerId) throws DeveloperNotFoundException;
+    BugDto assignDeveloper(String issueId, String developerId) throws DeveloperNotFoundException;
 
     BugDto update(BugDto bugDto);
 }
